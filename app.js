@@ -15,7 +15,6 @@ function agregarAmigo() {
    // Validar nombres repetidos
    if (amigos.includes(nombre)){
     alert("Ese nombre ya fue introducido");
-    return;
    }
 
    // Agregar amigo a la lista
@@ -30,4 +29,15 @@ function agregarAmigo() {
    //limpiar campo
    input.value = "";
 
+}
+
+function sortearAmigo(){
+    
+    // Sorteo del amigo 
+    let indice = Math.floor(Math.random()*amigos.length);
+    let amigoSecreto = amigos[indice];
+
+
+    //Mostrar el amigo secreto
+    document.getElementById("resultado").textContent = `El amigo secreto es: ${amigoSecreto}`;
 }
