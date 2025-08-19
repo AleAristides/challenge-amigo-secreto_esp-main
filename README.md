@@ -10,7 +10,7 @@ Se muestar el resultado en la pantalla
 
 VISTA PREVIA
 
-![Ruta de la imagen](assets/AmigoSecreto.png)
+![Ruta de la imagen](assets/AmigoSecreto1.png)
 
 AUTOR
 
