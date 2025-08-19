@@ -15,29 +15,38 @@ function agregarAmigo() {
    // Validar nombres repetidos
    if (amigos.includes(nombre)){
     alert("Ese nombre ya fue introducido");
+    return;
    }
 
    // Agregar amigo a la lista
    amigos.push(nombre);
 
    // Mostrar amigo en la lista
-   let lista = document.getElementById("listaAmigos");
-   let item = document.createElement("li");
-   item.textContent = nombre;
-   lista.appendChild(item);
+     let lista = document.getElementById("listaAmigos");
 
-   //limpiar campo
-   input.value = "";
+    //Limpiar la lista
+    lista.innerHTML = "";
+
+    //Recorrer el array y agregar cada amigo
+    for (let i = 0; i < amigos.length; i++) {
+        lista.innerHTML += `<li>${amigos[i]}</li>`;
+    }
+    input.value = "";
 
 }
 
 function sortearAmigo(){
-    
+    // Comproba que la lista no este vacía
+        if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+        }
     // Sorteo del amigo 
     let indice = Math.floor(Math.random()*amigos.length);
     let amigoSecreto = amigos[indice];
 
 
     //Mostrar el amigo secreto
-    document.getElementById("resultado").textContent = `El amigo secreto es: ${amigoSecreto}`;
+       let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `🎉 El amigo secreto es: <strong>${amigoSecreto}</strong>`;
 }
